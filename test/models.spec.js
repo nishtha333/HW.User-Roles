@@ -26,9 +26,6 @@ describe("Models", () => {
         expect(roleMap.Admin.length).to.equal(2);
         expect(roleMap.HR.length).to.equal(1);
         expect(roleMap.Engineering.length).to.equal(0);
-        expect(roleMap.Admin[0].name).to.equal("moe");
-        expect(roleMap.Admin[1].name).to.equal("larry");
-        expect(roleMap.HR[0].name).to.equal("curly");
     });
     it('GetUsers gets users with the roles', () => {
         return db.getUsers()

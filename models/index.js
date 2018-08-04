@@ -1,11 +1,11 @@
 const Sequelize = require("sequelize");
 const db = new Sequelize(process.env.DATABASE_URL, {logging: false});
 
-const Role = db.define('role', {
+const Role = db.define("role", {
     role: {type: Sequelize.STRING, allowNull: false}
 });
 
-const User = db.define('user', {
+const User = db.define("user", {
     name: {type: Sequelize.STRING, allowNull: false}
 });
 
@@ -16,7 +16,7 @@ const sync = () => {
     return db.sync({force: true});
 }
 
-const seed = async () => {
+const seed = () => {
     const roles = ["Admin", "HR", "Engineering"];
     return Promise.all(roles.map(role => Role.create({role: role})))
                   .then(([admin, hr, engineering]) => {

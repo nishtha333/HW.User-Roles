@@ -10,6 +10,6 @@ app.use(bodyParser.urlencoded({extended: false}));
 app.use("/users", require("./routes/users"));
 app.use("/roles", require("./routes/roles"));
 
-app.use("/", (req, res, next) => {
+app.get("/", (req, res, next) => {
     res.redirect("/users");
-})
+});
